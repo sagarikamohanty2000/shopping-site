@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 function App() {
   const [gettingOrderDetails, setGettingOrderDetails] = useState([]);
+  const [amount, setAmount] = useState(0);
 
   const onGettingOrderDetails = (props) => {
     setAmount((prevAmount) => {
@@ -20,11 +21,24 @@ function App() {
     );
   };
 
+  const deleteButtonClicked = (props) => {
+    console.log(props);
+
+    const index = gettingOrderDetails.indexOf(props);
+    console.log(index);
+    setGettingOrderDetails((prevOrders) => {
+      return prevOrders.filter((product) => product.orderId !== props.orderId);
+    });
+    setAmount((prevAmount) => {
+      return Number(prevAmount) - Number(props.productPrice);
+    });
+  };
+
   return (
     <React.Fragment>
       <div className="App">
         <header className="App-header">
-          <h2>Restaurant Order</h2>
+          <h2>Shopping Site</h2>
         </header>
       </div>
       <div className="main-body">
@@ -32,6 +46,7 @@ function App() {
       </div>
       <div>
         <OrderDetails
+          deleteDetails={deleteButtonClicked}
           details={gettingOrderDetails}
           productAmount={amount}
         ></OrderDetails>
