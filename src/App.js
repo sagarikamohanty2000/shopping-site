@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import OrderForm from "./Components/OrderForm";
+import OrderDetails from "./Components/OrderDetails";
+import "./App.css";
+import React, { useState } from "react";
 
 function App() {
+  const [gettingOrderDetails, setGettingOrderDetails] = useState([]);
+
+  const onGettingOrderDetails = (props) => {
+    setAmount((prevAmount) => {
+      return Number(prevAmount) + Number(props.productPrice);
+    });
+
+    setGettingOrderDetails((prevOrders) => {
+      return [...prevOrders, props];
+    });
+    localStorage.setItem(
+      `${props.orderId}`,
+      `${props.productName} ${props.productPrice}`
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <div className="App">
+        <header className="App-header">
+          <h2>Restaurant Order</h2>
+        </header>
+      </div>
+      <div className="main-body">
+        <OrderForm orderDetails={onGettingOrderDetails}></OrderForm>
+      </div>
+      <div>
+        <OrderDetails
+          details={gettingOrderDetails}
+          productAmount={amount}
+        ></OrderDetails>
+      </div>
+    </React.Fragment>
   );
 }
-
 export default App;
