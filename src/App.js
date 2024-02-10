@@ -17,7 +17,7 @@ function App() {
     });
     localStorage.setItem(
       `${props.orderId}`,
-      `${props.productName} ${props.productPrice}`
+      `"Product Name" : '${props.productName}' ,  "Product Selling Price" :  '${props.productPrice}'`
     );
   };
 

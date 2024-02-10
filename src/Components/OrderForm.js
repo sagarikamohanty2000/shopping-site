@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Card from './UI/Card';
-import './OrderForm.css';
+import Card from "./UI/Card";
+import "./OrderForm.css";
 
 const OrderForm = (props) => {
   const [orderId, setOrderId] = useState("");
@@ -36,9 +36,15 @@ const OrderForm = (props) => {
       <Card className="form-body">
         <form onSubmit={onSubmitHandler}>
           <div className="product-labels">
-            <label htmlFor="orderId" id='orderIdLabel'>Unique Order ID</label>
-            <label  htmlFor="product" id='productLabel'>Product Name</label>
-            <label  htmlFor="productPrice" id='productPriceLabel'>Product Price</label>
+            <label htmlFor="orderId" id="orderIdLabel">
+              Unique Order ID
+            </label>
+            <label htmlFor="product" id="productLabel">
+              Product Name
+            </label>
+            <label htmlFor="productPrice" id="productPriceLabel">
+              Product Price
+            </label>
           </div>
           <div className="input-field1">
             <input
@@ -61,8 +67,9 @@ const OrderForm = (props) => {
             ></input>
           </div>
 
-      <button type="submit">Add to Bill</button>
-          
+          <button type="submit" id="add">
+            Add to Bill
+          </button>
         </form>
       </Card>
     </React.Fragment>

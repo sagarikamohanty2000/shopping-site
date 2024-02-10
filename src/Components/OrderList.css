@@ -1,0 +1,28 @@
+.product-list {
+  display: inline-flex;
+}
+.orderId {
+  font-size: larger;
+}
+
+.prodName {
+  font-weight: 700;
+  font-size: larger;
+  position: absolute;
+  right: 900px;
+}
+.prodPrice {
+  position: absolute;
+  right: 540px;
+  font-size: larger;
+}
+#deleteBtn {
+  position: absolute;
+  right: 240px;
+  width: 200px;
+  height: 30px;
+  color: beige;
+  background-color: rgb(37, 17, 3);
+  box-shadow: black;
+  border-radius: 8px;
+}

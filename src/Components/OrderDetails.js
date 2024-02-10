@@ -1,6 +1,7 @@
 import React from "react";
 import OrderList from "./OrderList";
 import Card from "./UI/Card";
+import "./OrderDetails.css";
 
 const OrderDeatils = (props) => {
   const deleteHandler = (value) => {
@@ -10,11 +11,18 @@ const OrderDeatils = (props) => {
 
   return (
     <React.Fragment>
-      <div className="table-1">
-        <h3>Product Details </h3>
+      <div className="products">
+        <div className="Headers">
+          <h3>Product Details </h3>
+
+          <div className="cost-total">
+            <h3>{`Total cost of Products : ${props.productAmount}`}</h3>
+          </div>
+        </div>
+
         <ul>
           {props.details.map((product) => (
-            <Card key={product.orderId}>
+            <Card className="details" key={product.orderId}>
               <OrderList
                 productDetails={product}
                 onDelete={deleteHandler}
@@ -22,9 +30,6 @@ const OrderDeatils = (props) => {
             </Card>
           ))}
         </ul>
-      </div>
-      <div className="cost-total">
-        <h3>{`Total cost of Products : ${props.productAmount}`}</h3>
       </div>
     </React.Fragment>
   );
