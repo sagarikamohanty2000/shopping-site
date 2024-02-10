@@ -1,0 +1,28 @@
+.products {
+  display: block;
+  margin-left: 10.5%;
+  margin-top: 60px;
+}
+
+.Headers {
+  display: flex;
+}
+ul {
+  list-style: none;
+}
+
+.details {
+  margin-top: 6px;
+  width: 85.5%;
+  height: 40px;
+  padding-top: 12px;
+  padding-left: 30px;
+  font-size: larger;
+  color: rgb(66, 28, 3);
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.cost-total {
+  margin-left: 58%;
+}

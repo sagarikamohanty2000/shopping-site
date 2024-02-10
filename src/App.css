@@ -10,10 +10,8 @@
   color: white;
 }
 
-.main-body{
-
+.main-body {
   margin-top: 5%;
   display: flex;
   justify-content: center;
 }
-
